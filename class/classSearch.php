@@ -14,12 +14,24 @@ class Search{
                             if($rows!=0)
                                 {
                                     $i=1;
-                                    echo "<p>Found $rows users in total:</p>";
+                                    if($rows==1)
+                                    {
+                                        echo "<p>Only $rows user found:</p>";
+                                        while($red=$db->fetch_object($rez))
+                                        {
+                                            echo "User number $i: ".$red->username."<br>";
+                                            $i++;
+                                        }
+                                    }
+                                    else 
+                                    {
+                                    echo "<p>Found $rows users in totall:</p>";
                                     while($red=$db->fetch_object($rez))
                                         {
                                             echo "User number $i: ".$red->username."<br>";
                                             $i++;
                                         }
+                                    }
                                 }
                             else echo "Unknown username, please try again.</p>";
                 }
