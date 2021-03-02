@@ -51,3 +51,6 @@ $user = new User();
     ?>
 </body>
 </html>
+<?php
+unset($db);
+?>
