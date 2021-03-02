@@ -70,3 +70,6 @@ $searching = new Search();
     ?>
 </body>
 </html>
+<?php
+unset($db);
+?>
